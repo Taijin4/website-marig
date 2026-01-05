@@ -617,94 +617,203 @@ function Landing() {
   
   const projects = [
     {
-      name: "End-to-end CRM deployment at Alter Solutions",
+      name: "No-Code CRM implementation at White Wave",
       category: "Product",
-      description: "Across five countries, teams were using different CRM and ATS tools. The mission was to centralise and standardise operations, resulting in the full deployment of HubSpot for sales and SmartRecruiters for recruitment, reporting directly to the CEOs.",
-      tools: ["CRM implementation (+ATS)", "Hubspot", "Smart Recruiters", "Airtable", "Change Management"],
+      description: "Designed and implemented a scalable no-code CRM to structure outbound sales, clean data, and align sales processes with Lemlist for a fast-growing startup.",
+      tools: ["CRM implementation (+ATS)", "Airtable", "Notion", "Lemlist", "Sales Operations", "Data analysis"],
       details: {
-        context: "Five countries were using different tools (Airtable, BoundManager, etc.) as CRMs for their sales teams and various ATS solutions for recruitment. The goal was to standardise and streamline operations across all teams. The project resulted in a full deployment of **HubSpot** for all sales teams and **SmartRecruiters** for all recruitment teams.",
-        reporting: "Directly reporting to CEOs",
+        context: "White Wave is an early-stage company (less than one year old) specializing in LinkedIn lead generation. The founders, Antonin and Leo, needed a structured and reliable CRM to support their outbound sales efforts, improve data quality, and formalize their sales processes as the company scaled.",
+        reporting: "Role: Ops & systems Lead",
         missions: [
-          "Needs assessment & scoping",
-          "Audit on current tools & evaluating CRM options",
-          "Data audit, cleaning & migration",
-          "CRM setup & configuration",
-          "Process design & alignment",
-          "Testing & QA",
-          "User training & documentation",
-          "Go-live support",
-          "Post-launch optimisation"
+          "Audited existing tools and workflows (mainly Notion and Lemlist)",
+          "Designed a clear and scalable sales process for contacts, companies, and deals using Whimsical",
+          "Built three interconnected Airtable databases with lookups to create a clean and functional CRM",
+          "Migrated and cleaned data from multiple Notion tables and Google Sheets into Airtable",
+          "Set up and monitored a test phase to validate usability and adoption",
+          "Iterated on the CRM based on real usage and defined automation and dashboard requirements",
+          "Ensured dashboard and automation consistency with Lemlist setup and reporting",
+          "Guided the founders in defining relevant KPIs to track sales activity and performance",
+          "Implemented final automations and dashboards"
         ]
       }
     },
     {
-      name: "Customer Success Strategy & MVP Launch at Le Wagon",
+      name: "No-code CRM & process optimisation at WeBlame",
+      category: "Data",
+      description: "Built a centralised CRM and operational processes to help a new association manage volunteers and testimonies efficiently with limited resources.",
+      tools: ["CRM implementation (+ATS)", "Notion", "Airtable", "Knowledge Management", "Project Management"],
+      details: {
+        context: "WeBlame is a newly created association facing rapid operational needs with very limited resources. Helene and Marline, working only two days per week, urgently needed a way to manage two distinct data sources—volunteers and victims' testimonies—while Epitech students were developing a long-term platform. The goal was to deliver a quick, reliable operational solution and ensure continuity between tools and teams.",
+        reporting: "Role: Ops & systems Lead",
+        missions: [
+          "Rapidly audited existing data sources (email-based form submissions and Google Forms/Sheets)",
+          "Defined clear end-to-end processes for each population (volunteers and victims) to structure data and anticipate automations using Whimsical",
+          "Designed and built the core Airtable databases (volunteers, testimonies) to centralize and clean data",
+          "Migrated data sources to Airtable forms to standardize and secure incoming information",
+          "Documented all operational processes in Notion, including automation and AI hypotheses",
+          "Presented the CRM architecture and documentation to Epitech students to ensure a smooth handover",
+          "Collaborated with the development team to align operational needs and technical implementation",
+          "(Ongoing) Act as CRM and operations referent, overseeing student work as a project manager and ensuring long-term process sustainability for the association"
+        ]
+      }
+    },
+    {
+      name: "End-to-end launch of a new function at Amaris",
+      category: "People",
+      description: "Led the design, testing, and international rollout of a new recruitment function to better serve strategic, high-volume clients.",
+      tools: ["Project Management", "Change Management", "Talent acquisition", "English"],
+      details: {
+        context: "At Amaris, client needs were traditionally handled by business managers working in pairs with recruitment specialists. As the company grew, this model became less effective for strategic clients or those with more than 100 hiring needs per year. The objective was to design and deploy a new, more efficient function to address these complex, high-volume accounts. I led this project end to end.",
+        reporting: "Role: Project Manager",
+        missions: [
+          "Analyzed strengths and weaknesses of the existing delivery model",
+          "Compared performance across clients from various sectors (SNCF, BNP, Bouygues Telecom, Santander, McKinsey, Rolex) and countries (France, Singapore, Tunisia, Spain, Canada, Switzerland)",
+          "Designed a new operational process and role tailored to strategic, high-volume clients",
+          "Presented and validated the proposed model with the executive committee",
+          "Defined the new function in detail: job description, recruitment criteria, onboarding, career path, KPIs, compensation, and promotion framework",
+          "Launched a first pilot on an account within my scope, including recruiter training and change management with sales teams",
+          "Monitored performance metrics to validate efficiency and reassure stakeholders",
+          "Secured executive validation of results",
+          "Rolled out the model to five additional strategic accounts across different countries",
+          "Led change management, training, and team coordination across sales and recruitment teams worldwide",
+          "Delivered final documentation and training to regional leadership to integrate the new function sustainably across geographies"
+        ]
+      }
+    },
+    {
+      name: "Defined and optimized team structures to ensure scalability at Le Wagon",
+      category: "People",
+      description: "Redesigned and scaled Career Services team structures across multiple campuses to support global growth while enabling flexibility and future scalability.",
+      tools: ["People strategy", "Change management", "Learning & Development", "Notion", "English"],
+      details: {
+        context: "Le Wagon is a coding bootcamp that expanded through franchises. Around 2022, the founders acquired 25+ campuses worldwide to create a core structure capable of scaling globally. I was hired to lead the Career Services department and design a scalable structure that would meet both current needs and future growth. Prior to this, existing roles and missions were tailored to local campus activity, not global expansion.",
+        reporting: "Role: Head of",
+        missions: [
+          "Conducted an audit of existing Career Services operations across local campuses and regional offices",
+          "Benchmarked Career Services models at similar bootcamps to identify best practices",
+          "Segmented B2B and B2C offerings to define clear skill sets required for each service line",
+          "Designed new roles and career paths that addressed both current needs and scalability, ensuring the team could grow without adding staff for every 100 new students",
+          "Developed new processes, workflows, and databases aligned with the updated team structure",
+          "Led the transition from the old system (System A) to the new structure (System B), including change management, individual development plans, and onboarding for existing staff",
+          "Recruited additional team members to expand Career Services into regions without prior presence",
+          "After one year, completed team deployment while maintaining flexibility and role-centered design, ensuring no skill or responsibility was tied to a single individual"
+        ]
+      }
+    },
+    {
+      name: "Development of an internal candidate-matching system at Amaris",
+      category: "Data",
+      description: "Built an internal candidate-matching tool to automatically generate shortlists from a 2M+ CV database, streamlining recruitment operations for new client needs.",
+      tools: ["Product Management", "Data analysis", "Project Management", "Change Management", "English"],
+      details: {
+        context: "Amaris maintains a database of over 2 million CVs. The goal of this project was to develop an in-house candidate-matching system that automatically generates a shortlist for each new client need based on predefined criteria, reducing manual recruitment effort and improving speed and accuracy.",
+        reporting: "Role: Project Manager",
+        missions: [
+          "Defined realistic matching criteria based on available candidate and job data, refined with input from operations teams",
+          "Conducted a months-long data cleaning project to ensure the database could support accurate matching",
+          "Developed documentation, communication, and change management plans to maintain ongoing data quality",
+          "Acted as Product Owner in Agile development, collaborating closely with developers to build the interface",
+          "Conducted extensive testing to validate functionality and accuracy",
+          "Launched the tool to operations teams, providing training and adoption support",
+          "Measured ROI by comparing manual shortlisting time saved and recruitment efficiency improvements"
+        ]
+      }
+    },
+    {
+      name: "Improvement of legal reporting and compliance at Le Wagon",
+      category: "Data",
+      description: "Redesigned reporting processes to deliver accurate, automated, and visually appealing reports for certification, compliance, and marketing purposes.",
+      tools: ["Data analysis", "Product Management", "Knowledge Management", "Change Management", "Notion", "English"],
+      details: {
+        context: "Le Wagon needed accurate and attractive reports to respond to tenders, obtain certifications (Qualiopi in France for instance but also UK, Germany, Argentina, Singapore), and support marketing efforts. Existing reporting was slow, manual, and error-prone, relying on large Excel files. The objective was to create a clean, automated process that maximizes efficiency and reliability.",
+        reporting: "Role: Project Manager",
+        missions: [
+          "Collaborated with all departments (Sales, Admissions, Marketing, Legal, B2B, Executive Committee) to define reporting needs in terms of data, format, and design",
+          "Led a major data-cleaning initiative with the Head of Data to ensure reliability of the source data",
+          "Mapped data sources, identified missing information, and defined standardized calculations for all KPIs",
+          "Built initial dashboards in Metabase to validate data and visualize trends",
+          "Worked with Legal to define mandatory text, disclaimers, and compliance mentions for each report template",
+          "Partnered with Marketing to design visually appealing templates optimized for different media channels, ensuring compliance with brand and legal standards",
+          "Collaborated with the CTO to automate the process from database to final report templates",
+          "Conducted training and communication to ensure correct use of templates across teams",
+          "Documented all processes, templates, and reports in Notion, creating a clear, audit-ready space for internal and external review"
+        ]
+      }
+    },
+    {
+      name: "Redesign of soft skills learning experience at Le Wagon",
+      category: "People",
+      description: "Redesigned Le Wagon's soft skills learning experience into a fully digital, gamified, and self-paced model to improve career guidance and job placement outcomes.",
+      tools: ["Product Management", "Change Management", "Learning & Development", "Huntr", "Make"],
+      details: {
+        context: "Le Wagon is a coding bootcamp that expanded globally through franchises. By 2022, with 25+ campuses worldwide, students faced increasing difficulty securing their first jobs despite strong technical training. The goal of this mission was to redesign the soft skills learning journey, enhance career guidance, and improve—or at least stabilize—the bootcamp's job placement outcomes in a challenging market.",
+        reporting: "Role: Head of",
+        missions: [
+          "Audited existing learning content and delivery methods versus company expectations",
+          "Conducted interviews with alumni (past and current) to understand needs and engagement gaps",
+          "Gathered input from other departments to assess perceptions of Career Services and benchmarked best practices from other bootcamps",
+          "Designed a 360° transformation, creating a fully digital, gamified, self-paced learning experience",
+          "Reviewed and optimized content formats: e-learning modules, group online courses, on-site workshops, and individual coaching with expert freelancers",
+          "Collaborated with the CTO to improve the in-house learning platform and integrate new features",
+          "Integrated a CRM module using Huntr to track student progress and gamification engagement metrics",
+          "Redesigned the presentation of the service externally (media interviews, website content, YouTube videos) and internally to ensure adoption and understanding",
+          "Implemented a fully data-tracked system to measure ROI and inform future program improvements"
+        ]
+      }
+    },
+    {
+      name: "Customer Success strategy & MVP launch at Le Wagon",
       category: "Product",
-      description: "Strategic development and launch of customer success initiatives with MVP implementation.",
-      tools: ["Product Management", "Sales Operations"],
+      description: "Designed and launched a B2B Customer Success MVP, centralizing company data in a CRM and testing a new talent-accessibility offering for businesses.",
+      tools: ["Sales Operations", "Change Management", "Product Management", "HubSpot", "Airtable", "Softr", "Lemlist", "The growth machine", "Huntr", "Make"],
       details: {
-        context: "Le Wagon needed to develop a comprehensive customer success strategy to improve student outcomes and satisfaction. The project involved creating an MVP for tracking and improving the customer journey.",
-        reporting: "Reporting to Product & Operations teams",
+        context: "Le Wagon's Career Services B2B efforts were unstructured: job fairs and company contacts existed but without a clear sales strategy. The goal was to define an offer and implement a sales process for corporate clients while testing its effectiveness with a no-code MVP.",
+        reporting: "Role: Head of",
         missions: [
-          "Customer journey mapping",
-          "Success metrics definition",
-          "MVP design & development",
-          "Feedback loop implementation",
-          "Team training & onboarding"
+          "Audited existing company data and history (partnerships, alumni hires, employer branding collaborations)",
+          "Centralized all B2B data into HubSpot, separating it from B2C pipelines",
+          "Managed CRM cleaning, documentation, and segmentation for Career Services and corporate offerings",
+          "Defined the product angle and MVP with a focus on **talent accessibility** rather than hiring services",
+          "Developed the MVP using Airtable and Softr; integrated Huntr and in-house systems with automation via Make",
+          "Conducted market benchmarking to refine the offering",
+          "Managed data migration, system configuration, and team training",
+          "Updated external positioning: website, marketing content, and sales communications"
         ]
       }
     },
     {
-      name: "Redesign of a soft skills learning experience at Le Wagon",
+      name: "End-to-End CRM deployment at Alter Solutions",
+      category: "Data",
+      description: "Deployed a harmonized CRM across five countries, including data migration, automation setup, and adoption support for sales and recruitment teams.",
+      tools: ["Project Management", "Change Management", "Data analysis", "HubSpot", "English"],
+      details: {
+        context: "Alter Solutions operated in five countries (France, Germany, Portugal, Spain, Belgium) with autonomous operations. The objective was to standardize CRM usage to enable scalable operations across recruitment and sales.",
+        reporting: "Role: Project Manager",
+        missions: [
+          "Audited all systems across countries (BoundManager, HubSpot, Airtable, Excel)",
+          "Benchmarked solutions and selected HubSpot for sales, SmartRecruiters for recruitment",
+          "Configured both tools and automated workflows between them",
+          "Prepared and migrated data from country-specific systems",
+          "Deployed CRM country by country, including training, change management, dashboards, adoption follow-up, and system adjustments",
+          "Measured ROI and reported outcomes to founders"
+        ]
+      }
+    },
+    {
+      name: "Assuring fusion with a new venture at Le Wagon",
       category: "People",
-      description: "Complete redesign of the soft skills curriculum and learning experience for bootcamp students.",
-      tools: ["Learning & Development", "Product Management"],
+      description: "Integrated newly acquired South American campuses into the existing Career Services structure, ensuring alignment while respecting local contexts.",
+      tools: ["Change Management", "Learning & Development", "People strategy"],
       details: {
-        context: "The existing soft skills curriculum needed modernisation to better prepare students for the job market. The project involved a complete redesign of the learning experience.",
-        reporting: "Reporting to Education team",
+        context: "Two years after the global expansion, Le Wagon acquired all remaining South American franchises (Brazil, Argentina, Chile, Mexico). The goal was to integrate these new teams into the existing Career Services structure while considering local contexts and building engagement.",
+        reporting: "Role: Head of",
         missions: [
-          "Current curriculum audit",
-          "Market research & benchmarking",
-          "New curriculum design",
-          "Content creation",
-          "Pilot testing & iteration",
-          "Full rollout & training"
-        ]
-      }
-    },
-    {
-      name: "Development an internal candidate-matching system at Amaris",
-      category: "People",
-      description: "Built an internal system to match candidates with job opportunities more efficiently.",
-      tools: ["Talent acquisition", "Data analysis", "Airtable"],
-      details: {
-        context: "Amaris needed an efficient way to match internal candidates with new opportunities across the organisation. The project involved building a data-driven matching system.",
-        reporting: "Reporting to HR & Talent teams",
-        missions: [
-          "Requirements gathering",
-          "Data structure design",
-          "Matching algorithm development",
-          "Airtable implementation",
-          "User training",
-          "Performance monitoring"
-        ]
-      }
-    },
-    {
-      name: "No code CRM at White Wave",
-      category: "Sales",
-      description: "Development of a no-code CRM solution tailored for business needs.",
-      tools: ["CRM implementation (+ATS)", "Airtable", "Notion"],
-      details: {
-        context: "White Wave needed a flexible, cost-effective CRM solution that could be managed without technical resources. The project delivered a fully functional no-code CRM.",
-        reporting: "Reporting to Founders",
-        missions: [
-          "Business needs analysis",
-          "Tool selection",
-          "CRM architecture design",
-          "Airtable & Notion setup",
-          "Automation implementation",
-          "Documentation & training"
+          "Built relationships with new teams to understand local practices, markets, and constraints",
+          "Identified 2–3 key strategic priorities to focus on first, avoiding overloading the teams with changes",
+          "Aligned local directors with overall department objectives before implementing operational adjustments",
+          "Collaborated closely with teams to make gradual, day-to-day improvements ensuring smooth integration",
+          "Organized team dynamics and ambassador roles to support natural adoption of new practices",
+          "Provided documentation in local languages and prioritized local team needs to foster trust and alignment"
         ]
       }
     }
