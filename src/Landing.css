@@ -359,6 +359,8 @@
   grid-template-columns: auto 1fr;
   gap: var(--spacing-2xl);
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .hero-avatar-section {
@@ -1993,6 +1995,7 @@
   .hero-main {
     grid-template-columns: 1fr;
     gap: var(--spacing-xl);
+    text-align: center;
   }
 
   .hero-avatar-section {
