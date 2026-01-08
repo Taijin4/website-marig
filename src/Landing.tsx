@@ -320,7 +320,7 @@ function SkillIcon({ skillName }: { skillName: string }) {
   )
 }
 
-function ProjectCard({ project, index, onClick }: { project: { name: string; category: string; description: string; tools: string[] }, index: number, onClick?: () => void }) {
+function ProjectCard({ project, index, onClick }: { project: { name: string; category: string[]; description: string; tools: string[] }, index: number, onClick?: () => void }) {
   const cardRef = useScrollAnimation({ threshold: 0.1, rootMargin: '0px 0px -50px 0px' })
   
   // Map tools to their icons
@@ -527,7 +527,7 @@ function TestimonialModal({ testimonial, onClose }: { testimonial: { name: strin
 // Type pour les projets
 type Project = {
   name: string;
-  category: string;
+  category: string[]; // Array pour supporter plusieurs catégories
   description: string;
   tools: string[];
   details: {
@@ -561,7 +561,7 @@ function ProjectModal({ project, onClose }: { project: Project | null; onClose: 
           </svg>
         </button>
         <div className="project-modal-header">
-          <span className="project-modal-category">{project.category}</span>
+          <span className="project-modal-category">{Array.isArray(project.category) ? project.category.join(' · ') : project.category}</span>
           <h2 className="project-modal-title">{project.name}</h2>
         </div>
         <div className="project-modal-content">
@@ -618,7 +618,7 @@ function Landing() {
   const projects = [
     {
       name: "No-Code CRM implementation at White Wave",
-      category: "Product",
+      category: ["Product", "Sales"],
       description: "Designed and implemented a scalable no-code CRM to structure outbound sales, clean data, and align sales processes with Lemlist for a fast-growing startup.",
       tools: ["CRM implementation (+ATS)", "Airtable", "Notion", "Lemlist", "Sales Operations", "Data analysis"],
       details: {
@@ -639,7 +639,7 @@ function Landing() {
     },
     {
       name: "No-code CRM & process optimisation at WeBlame",
-      category: "Data",
+      category: ["Data", "Product"],
       description: "Built a centralised CRM and operational processes to help a new association manage volunteers and testimonies efficiently with limited resources.",
       tools: ["CRM implementation (+ATS)", "Notion", "Airtable", "Knowledge Management", "Project Management"],
       details: {
@@ -659,7 +659,7 @@ function Landing() {
     },
     {
       name: "End-to-end launch of a new function at Amaris",
-      category: "People",
+      category: ["People", "Sales"],
       description: "Led the design, testing, and international rollout of a new recruitment function to better serve strategic, high-volume clients.",
       tools: ["Project Management", "Change Management", "Talent acquisition", "English"],
       details: {
@@ -682,7 +682,7 @@ function Landing() {
     },
     {
       name: "Defined and optimized team structures to ensure scalability at Le Wagon",
-      category: "People",
+      category: ["Data", "People"],
       description: "Redesigned and scaled Career Services team structures across multiple campuses to support global growth while enabling flexibility and future scalability.",
       tools: ["People strategy", "Change management", "Learning & Development", "Notion", "English"],
       details: {
@@ -702,7 +702,7 @@ function Landing() {
     },
     {
       name: "Development of an internal candidate-matching system at Amaris",
-      category: "Data",
+      category: ["Data", "Product"],
       description: "Built an internal candidate-matching tool to automatically generate shortlists from a 2M+ CV database, streamlining recruitment operations for new client needs.",
       tools: ["Product Management", "Data analysis", "Project Management", "Change Management", "English"],
       details: {
@@ -721,7 +721,7 @@ function Landing() {
     },
     {
       name: "Improvement of legal reporting and compliance at Le Wagon",
-      category: "Data",
+      category: ["Data"],
       description: "Redesigned reporting processes to deliver accurate, automated, and visually appealing reports for certification, compliance, and marketing purposes.",
       tools: ["Data analysis", "Product Management", "Knowledge Management", "Change Management", "Notion", "English"],
       details: {
@@ -742,7 +742,7 @@ function Landing() {
     },
     {
       name: "Redesign of soft skills learning experience at Le Wagon",
-      category: "People",
+      category: ["Product", "People"],
       description: "Redesigned Le Wagon's soft skills learning experience into a fully digital, gamified, and self-paced model to improve career guidance and job placement outcomes.",
       tools: ["Product Management", "Change Management", "Learning & Development", "Huntr", "Make"],
       details: {
@@ -763,7 +763,7 @@ function Landing() {
     },
     {
       name: "Customer Success strategy & MVP launch at Le Wagon",
-      category: "Product",
+      category: ["Product", "Sales"],
       description: "Designed and launched a B2B Customer Success MVP, centralizing company data in a CRM and testing a new talent-accessibility offering for businesses.",
       tools: ["Sales Operations", "Change Management", "Product Management", "HubSpot", "Airtable", "Softr", "Lemlist", "The growth machine", "Huntr", "Make"],
       details: {
@@ -783,7 +783,7 @@ function Landing() {
     },
     {
       name: "End-to-End CRM deployment at Alter Solutions",
-      category: "Data",
+      category: ["Data", "Product"],
       description: "Deployed a harmonized CRM across five countries, including data migration, automation setup, and adoption support for sales and recruitment teams.",
       tools: ["Project Management", "Change Management", "Data analysis", "HubSpot", "English"],
       details: {
@@ -801,7 +801,7 @@ function Landing() {
     },
     {
       name: "Assuring fusion with a new venture at Le Wagon",
-      category: "People",
+      category: ["People"],
       description: "Integrated newly acquired South American campuses into the existing Career Services structure, ensuring alignment while respecting local contexts.",
       tools: ["Change Management", "Learning & Development", "People strategy"],
       details: {
@@ -820,9 +820,17 @@ function Landing() {
   ]
   
   const projectCategories = ['Product', 'People', 'Sales', 'Data', 'All']
+  
+  // Logique de filtrage : 
+  // - Pour "All" : afficher uniquement les 10 projets uniques (sans doublons)
+  // - Pour une catégorie spécifique : dupliquer les projets si nécessaire
   const filteredProjects = activeProjectCategory === 'All' 
-    ? projects 
-    : projects.filter(p => p.category === activeProjectCategory)
+    ? projects.slice(0, 10) // Limiter à 10 projets uniques pour "All"
+    : projects.flatMap(p => 
+        p.category.includes(activeProjectCategory) 
+          ? [{ ...p, displayCategory: activeProjectCategory }] 
+          : []
+      )
 
   const skills = [
     { name: "Product Management", type: "Expertises" },
@@ -1109,8 +1117,8 @@ function Landing() {
                           <SkillIcon skillName={skill.name} />
                         </div>
                         <span className="mindmap-node-label">{skill.name}</span>
-                        <span className="mindmap-node-indicator">
-                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <span className="card-click-indicator mindmap-node-indicator">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <path d="M7 17L17 7M17 7H7M17 7V17" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </span>
@@ -1221,8 +1229,8 @@ function Landing() {
               <div className="skills-tabs">
                 {projectCategories.map((category) => {
                   const count = category === 'All' 
-                    ? projects.length 
-                    : projects.filter(p => p.category === category).length;
+                    ? Math.min(projects.length, 10) // Limiter à 10 pour "All"
+                    : projects.filter(p => p.category.includes(category)).length;
                   return (
                     <button
                       key={category}
@@ -1243,14 +1251,20 @@ function Landing() {
             </div>
           </div>
           <div className="projects-grid">
-            {filteredProjects.map((project, index) => (
-              <ProjectCard 
-                key={`${activeProjectCategory}-${project.name}`} 
-                project={project} 
-                index={index} 
-                onClick={() => setSelectedProject(project)}
-              />
-            ))}
+            {filteredProjects.map((project, index) => {
+              // Pour les projets dupliqués, utiliser la catégorie d'affichage dans la clé
+              const displayKey = (project as any).displayCategory 
+                ? `${activeProjectCategory}-${project.name}-${(project as any).displayCategory}`
+                : `${activeProjectCategory}-${project.name}`;
+              return (
+                <ProjectCard 
+                  key={displayKey} 
+                  project={project} 
+                  index={index} 
+                  onClick={() => setSelectedProject(project)}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
